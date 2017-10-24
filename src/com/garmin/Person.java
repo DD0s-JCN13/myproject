@@ -1,7 +1,7 @@
 package com.garmin;
 
 	public class Person {
-		public void sayhello(){
+		/*public void sayhello(){
 			System.out.println("Hello!!");
 		}
 		
@@ -14,6 +14,6 @@ package com.garmin;
 	
 	
 	}
-	
+	*/
 	
 }
