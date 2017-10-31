@@ -39,7 +39,14 @@ public class VariableTester {
 		System.out.println(x>=y);
 		System.out.println(x << 1);
 		x++;
+		x+=1;
 		System.out.println(x);
+		
+		String i = "193";
+		int code = Integer.parseInt(i);
+		//上述為轉成整數
+		String iRE = String.valueOf(code);
+		//上述為轉為字串
 	 }
 
 }
