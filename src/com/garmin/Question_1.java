@@ -1,6 +1,6 @@
 package com.garmin;
 import java.util.Scanner;
-public class Question {
+public class Question_1 {
 
 	public static void main(String[] args) {
 		System.out.println("請問以下三位藝人誰的年紀最大？〈請以1.2.3作答〉");

@@ -17,6 +17,8 @@ public class Forfunction {
 			System.out.println();
 		}
 		*/
+		//印製2~5並列的乘法表
+		//十位數留白於否的規則相同
 		for (int i=1;i<=9;i++){
 			for(int n=2;n<=5;n++){
 				if(n<=4){
