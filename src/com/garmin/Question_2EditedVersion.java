@@ -14,7 +14,7 @@ public class Question_2EditedVersion {
 			for (int j=1;j<=i;j++) {
 				System.out.print("*");
 			}
-			for (int k=code-i;k>=1;k--) {
+			for (int k=code-i;k>=0;k--) {
 				System.out.print("#");
 			}
 			if (i<code) {
