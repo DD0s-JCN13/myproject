@@ -6,12 +6,12 @@ public class WeekTester {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		Scanner scan2 = new Scanner(System.in);
-		System.out.println("請輸入1~7的其中一個數字：");
 		boolean power = true;
 		boolean quest = true;
 		boolean again = false;
 		while(power) {
 			if(quest) {
+				System.out.println("請輸入1~7的其中一個數字：");
 				String input = scan.nextLine();
 				int i =Integer.parseInt(input);
 				switch(i){
@@ -19,43 +19,43 @@ public class WeekTester {
 						System.out.println("星期一");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						break;
 					case 2:
 						System.out.println("星期二");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						continue;
 					case 3:
 						System.out.println("星期三");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						continue;
 					case 4:
 						System.out.println("星期四");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						continue;
 					case 5:
 					System.out.println("星期五");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						continue;
 					case 6:
 						System.out.println("星期六");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						continue;
 					case 7:
 						System.out.println("星期天");
 						again = true;
 						quest = false;
-						power = false;
+						power = true;
 						continue;
 					default:
 						System.out.println("資料不符，請重新輸入");
