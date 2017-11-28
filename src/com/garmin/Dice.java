@@ -1,9 +1,16 @@
 package com.garmin;
-
+import java.util.Scanner;
 public class Dice {
 	public static void main (String[] args){
+		Scanner scan = new Scanner(System.in);
+		System.out.println("請輸入1~365之間的一個數字：");
+		String input = scan.nextLine();
 		int n[] ={31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-		int day = 100;
+		int day = Integer.parseInt(input);
+		if (day>365 || day<1){
+			System.out.println("資料輸入錯誤！");
+		}
+		else{
 		int j = 1;
 		//Type 2
 /*		int n[] = new int[3];
@@ -35,5 +42,6 @@ public class Dice {
 			}
 		}
 */
+		}
 	}
 }
