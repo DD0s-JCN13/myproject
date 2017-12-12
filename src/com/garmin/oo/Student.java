@@ -5,10 +5,13 @@ public class Student {
 	int Mathmatics;
 	int English;
 	String Name;
-	public Student(String N, int C, int E, int M){
-		Chinese = C;
-		English = E;
-		Mathmatics = M;
+	public Student(String Name, int Chinese, int English, int Math){
+		this.Chinese = Chinese;
+		this.English = English;
+		this.Mathmatics = Math;
+		this.Name = Name;
+	}
+	public Student(String N){
 		Name = N;
 	}
 	public void print(){
