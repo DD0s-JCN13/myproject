@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class GameTester {
 	public static void main(String[] args){
 		boolean first = true;
+		boolean move = true;
 		int i=1;
 		int hp=100;
 		int Location = 0;
@@ -25,36 +26,44 @@ public class GameTester {
 					if(Location / 5 < 2){
 						Location = Location + 5;
 						System.out.println("移動至第"+((Location%5)+1)+"行第"+((Location/5)+1)+"列");
+						move = true;
 					}
 					else{
 						System.out.println("已到達地圖之邊界，請重新輸入！");
+						move = false;
 					}
 					break;
 				case 4:
 					if(Location % 5 > 0){
 						Location = Location - 1;
 						System.out.println("移動至第"+((Location%5)+1)+"行第"+((Location/5)+1)+"列");
+						move = true;
 					}
 					else{
 						System.out.println("已到達地圖之邊界，請重新輸入！");
+						move = false;
 					}
 					break;
 				case 6:
 					if(Location % 5 < 4){
 						Location = Location + 1;
 						System.out.println("移動至第"+((Location%5)+1)+"行第"+((Location/5)+1)+"列");
+						move = true;
 					}
 					else{
 						System.out.println("已到達地圖之邊界，請重新輸入！");
+						move = false;
 					}
 					break;
 				case 8:
 					if(Location / 5 > 0){
 						Location = Location - 5;
 						System.out.println("移動至第"+((Location%5)+1)+"行第"+((Location/5)+1)+"列");
+						move = true;
 					}
 					else{
 						System.out.println("已到達地圖之邊界，請重新輸入！");
+						move = false;
 					}
 					break;
 				case 0:
@@ -62,14 +71,19 @@ public class GameTester {
 					break;
 				default:
 					System.out.println("輸入錯誤，請重新輸入");
+					move = false;
 			}
 			if(Location==2||Location==6||Location==9||Location==11||Location==13){
-				hp = hp - 30;
-				System.out.println("遇到怪物，損失30點hp，目前剩餘hp"+hp+"點");
+				if(move){
+					hp = hp - 30;
+					System.out.println("遇到怪物，損失30點hp，目前剩餘hp"+hp+"點");
+				}
 			}
 			else if(Location==3||Location==7){
-				hp = hp + 20;
-				System.out.println("得到恢復藥劑，恢復20點hp，目前剩餘hp"+hp+"點");
+				if(move){
+					hp = hp + 20;
+					System.out.println("得到恢復藥劑，恢復20點hp，目前剩餘hp"+hp+"點");
+				}
 			}
 			if(k==0){
 				first=false;
