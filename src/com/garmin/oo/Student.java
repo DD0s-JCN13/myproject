@@ -5,6 +5,9 @@ public class Student {
 	int Mathmatics;
 	int English;
 	String Name;
+	public Student(){
+		
+	}
 	public Student(String Name, int Chinese, int English, int Math){
 		this.Chinese = Chinese;
 		this.English = English;
