@@ -4,16 +4,27 @@ public class VendingLink {
 	int price;
 	String name;
 	String input;
-	int cash;
+	static int cash = 0;
 	static boolean power = true;
+	public VendingLink(String input, String name, int price) {
+		input = this.input;
+		this.name = name;
+		this.price = price;
+	}
 	public VendingLink(String name, int price){
 		this.name= name;
 		this.price= price;
 	}
+	public VendingLink(){
+		
+	}
+	public static boolean ReturnPower() {
+		return (power);
+	}
 	public VendingLink(String input){
 		this.input = input;
 	}
-	public void PrintList(){
+	public static void PrintList(){
 		System.out.println("販賣機餘額:"+cash+"元");
 		System.out.println("請投幣或選擇飲料(a或b或c),或輸入0結束:");
 	}
@@ -21,15 +32,21 @@ public class VendingLink {
 		if(input=="0"){
 			power = false;
 		}
-		else if(input=="1"||input=="5"||input=="10"){
-			int instant = Integer.parseInt(input);
-			cash = cash + instant;
+		else if(input=="1"){
+			cash = cash + 1;
+		}
+		else if(input=="5") {
+			cash = cash + 5;
+		}
+		else if(input=="10") {
+			cash = cash + 10;
 		}
 		else{
 			power = false;
 		}
 	}
 	public void Cost(){
+		input = name;
 		if(name=="a"){
 			if(cash<price){
 				System.out.println("BEEP!");
