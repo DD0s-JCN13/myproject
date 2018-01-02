@@ -5,6 +5,7 @@ public class Student {
 	int Mathmatics;
 	int English;
 	String Name;
+	public int pass = 60;
 	public Student(){
 		
 	}

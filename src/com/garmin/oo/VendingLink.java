@@ -1,16 +1,16 @@
 package com.garmin.oo;
 
 public class VendingLink {
-	int price;
-	String name;
-	String input;
-	static int cash = 0;
+	public int price;
+	public String name;
+	public String input;
+	public static int cash = 0;
 	static boolean power = true;
-	public VendingLink(String input, String name, int price) {
-		input = this.input;
+/*	public VendingLink(String input, String name, int price) {
+		this.input = input;
 		this.name = name;
 		this.price = price;
-	}
+	}*/
 	public VendingLink(String name, int price){
 		this.name= name;
 		this.price= price;
@@ -21,24 +21,20 @@ public class VendingLink {
 	public static boolean ReturnPower() {
 		return (power);
 	}
-	public VendingLink(String input){
-		this.input = input;
+	public static int getCash(){
+		return (cash);
 	}
 	public static void PrintList(){
-		System.out.println("販賣機餘額:"+cash+"元");
 		System.out.println("請投幣或選擇飲料(a或b或c),或輸入0結束:");
 	}
 	public void GetCash(){
-		if(input=="0"){
-			power = false;
-		}
-		else if(input=="1"){
+		if(name=="1"){
 			cash = cash + 1;
 		}
-		else if(input=="5") {
+		else if(name=="5") {
 			cash = cash + 5;
 		}
-		else if(input=="10") {
+		else if(name=="10") {
 			cash = cash + 10;
 		}
 		else{
@@ -46,7 +42,6 @@ public class VendingLink {
 		}
 	}
 	public void Cost(){
-		input = name;
 		if(name=="a"){
 			if(cash<price){
 				System.out.println("BEEP!");
