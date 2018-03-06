@@ -1,7 +1,7 @@
 package com.java2.object;
 import java.util.Scanner;
 public class Ticket {
-
+	static boolean power=TicketLink.ReturnPower();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TicketLink[] Tickets = new TicketLink[15];
@@ -14,6 +14,8 @@ public class Ticket {
 		Tickets[6]=new TicketLink("MIDFarzone",5000);
 		Tickets[7]=new TicketLink("LEFTFarzone",4500);
 		Tickets[8]=new TicketLink("RIGHTFarzone",4500);
+	while(power){
+		TicketLink.PrintList();
 	}
-
+}
 }
