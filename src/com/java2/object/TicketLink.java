@@ -6,10 +6,15 @@ public class TicketLink {
 	public String input;
 	public static int cash=0;
 	static boolean power = true;
+	static boolean result = false;
 	
 	public TicketLink(String Zonename, int price){
 		this.Zonename= Zonename;
 		this.price= price;
+	}
+	
+	public TicketLink(String Zonename) {
+		this.Zonename= Zonename;
 	}
 	
 	public TicketLink(){
@@ -28,4 +33,12 @@ public class TicketLink {
 		System.out.println("普通區票價：中間8000，左右7000");
 		System.out.println("後排區票價：中間5000，左右4500");
 	}
+	public static boolean Result() {
+		return(result = true);
+	}
+	
+	public static void PrintQNumber() {
+		System.out.print("請輸入想要的區塊：");
+	}
+
 }

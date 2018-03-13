@@ -4,6 +4,7 @@ public class Ticket {
 	static boolean power=TicketLink.ReturnPower();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Scanner SC1 = new Scanner(System.in);
 		TicketLink[] Tickets = new TicketLink[15];
 		Tickets[0]=new TicketLink("MIDRockzone",12000);
 		Tickets[1]=new TicketLink("LEFTRockzone",10000);
@@ -16,6 +17,8 @@ public class Ticket {
 		Tickets[8]=new TicketLink("RIGHTFarzone",4500);
 	while(power){
 		TicketLink.PrintList();
+		TicketLink.PrintQNumber();
+		String Input1 = SC1.nextLine();
 	}
 }
 }
