@@ -1,19 +1,28 @@
 package com.java2.object;
-import java.util.Scanner;
-public class ABnumber {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner input = new Scanner(System.in);
-		String secret = "9487";
-		int result = 0;
-		while (result != 40) {
-			System.out.print("Please enter ur answer:");
-			ABgame n = new ABgame(input.nextLine());
-			result = n.validate(secret); 
-			System.out.println((result)/10+"A"+(result)%10+"B");
-			
-		}
+public class ABnumber {
+	String number;
+	public ABnumber(String number){
+		this.number = number;
 	}
+	public int validate(String secret){
+		int result = 0;
+		int length = secret.length();
+		for (int i = 0; i< number.length();i++){
+			char c = number.charAt(i);
+			for (int j = 0;j < length; j++){
+				if (c == secret.charAt(j)){
+					if (i == j){
+						result = result + 10;
+					}else{
+						result +=1;
+					}
+					break;
+				}
+			}
+		}
+		return result;
+	}
+	
 
 }
