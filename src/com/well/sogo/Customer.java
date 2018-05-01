@@ -1,6 +1,6 @@
 package com.well.sogo;
 
-public class Customer {
+public class Customer implements Destoryable{
 	int amount;
 	float discount = 0.05f;
 	public Customer(int amount){
@@ -10,5 +10,11 @@ public class Customer {
 	public void print(){
 		int total = (int)(amount*(1-discount));
 		System.out.println(amount+"\t"+total);
+	}
+
+	@Override
+	public void Destory() {
+		// TODO Auto-generated method stub
+		
 	}
 }
