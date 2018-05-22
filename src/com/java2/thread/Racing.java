@@ -11,8 +11,8 @@ public class Racing {
 			horses.add(h);
 			h.start();
 		}*/
-		Horse h1 = new Horse(h1);
-		h1.run();
+		Horse h1 = new Horse();
+		h1.start();
 		HorseRunable h2 = new HorseRunable();
 		Thread thr = new Thread(h2);
 		thr.start();
@@ -22,6 +22,7 @@ public class Racing {
 			thr.join();
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		System.out.print("The Race finished");
 		

@@ -3,9 +3,13 @@ package com.java2.thread;
 import java.util.List;
 
 public class Horse extends Thread{
-	List<Horse> list;
+	/*List<Horse> list;
 	public Horse(List<Horse> list){
 		this.list = list;
+	}*/
+	
+	public void Horse(){
+		
 	}
 	@Override
 	public void run(){
@@ -20,7 +24,7 @@ public class Horse extends Thread{
 			}
 			
 		}
-		list.add(this);
+		//list.add(this);
 		
 	}
 }

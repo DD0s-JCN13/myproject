@@ -8,13 +8,18 @@ public class HorseRunable implements Runnable{
 		for (int i =0; i<=50; i++){
 			System.out.println("R:"+i);
 			try {
-				Thread.sleep(150);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 		}
+	}
+
+	public void join() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
