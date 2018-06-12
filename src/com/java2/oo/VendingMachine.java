@@ -1,12 +1,6 @@
 package com.java2.oo;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,45 +11,56 @@ public class VendingMachine {
 	public VendingMachine(){
 		
 	}
-	public void addDrink(int id, String name, int price){
-		drinks.add(new Drink(id, name, price));
-	}
-	public void drinkRecord(){
-		Scanner sc = new Scanner(System.in);
-		try {
-			FileOutputStream fos = new FileOutputStream("Vending.txt",true);
-			PrintStream out = new PrintStream(fos);
-			System.out.println("Please enter id....");
-			int id = sc.nextInt();
-			System.out.println("Please enter name....");
-			String name = sc.nextLine();
-			System.out.println("Please enter price....");
-			out.println( id +"/t"+ name);
-			out.flush();
-			out.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	public void reader(){
-		try {
-			FileInputStream fis = new FileInputStream("Sales.txt");
-			InputStreamReader isr = new InputStreamReader(fis);
-			BufferedReader in = new BufferedReader(isr);
-			String line = in.readLine();
-			String[] token = line.split(",");
-			int id = Integer.parseInt(token[0])*2+1;
-			int price = Integer.parseInt(token[0])*2+2;
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e){
-			e.printStackTrace();
-		}
-	}
 	public void on(){
-		
+		System.out.println("Please insert coins....");
+		for(int i=0;i<drinks.size();i++) {
+			Drink drink = drinks.get(i);
+			System.out.println(drink.getId()+"\t"+drink.getName()+"\t"+drink.getPrice());
+		}
+		System.out.println("Only avaliable for 1,5,10 coin, stop inserting coins press 0....");
+		Scanner incoin = new Scanner(System.in);
+		int insert = incoin.nextInt();
+		int coin = 0;
+		boolean c1 = true;
+		boolean c2 = false;
+		if(c1) {
+			switch(insert) {
+			case 0:
+				c1=false;
+				c2=true;
+				break;
+			case 1:
+				coin = coin + 1;
+				break;
+			case 5:
+				coin = coin + 5;
+				break;
+			case 10:
+				coin = coin + 10;
+				break;
+			default:
+				System.out.println("Wrong data, input again...");
+				break;
+			}
+		}
+		if(c2) {
+			System.out.println("Please enter the id of the drinks you want to buy....");
+			Scanner sc = new Scanner(System.in);
+			int choice = sc.nextInt();
+			switch(choice) {
+			case 0:
+				break;
+			case 1:
+				Drink drink = drinks.get(1);
+				if(coin<drink.getPrice()) {
+					System.out.println("Not enough money....");
+					break;
+				}else {
+					coin = coin - drink.getPrice();
+					System.out.println("Here is your drink, remain "+coin+" dollars");
+				}
+			}
+		}
 	}
 	
 	
