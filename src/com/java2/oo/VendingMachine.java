@@ -45,20 +45,28 @@ public class VendingMachine {
 		}
 		if(c2) {
 			System.out.println("Please enter the id of the drinks you want to buy....");
+			System.out.println("(Press 0 to exit, then take the change)");
 			Scanner sc = new Scanner(System.in);
 			int choice = sc.nextInt();
 			switch(choice) {
 			case 0:
+				System.out.println("Remember to the the change, it's "+coin+" dollars");
 				break;
 			case 1:
-				Drink drink = drinks.get(1);
+			case 2:
+			case 3:
+				Drink drink = drinks.get(choice);
 				if(coin<drink.getPrice()) {
 					System.out.println("Not enough money....");
 					break;
 				}else {
 					coin = coin - drink.getPrice();
 					System.out.println("Here is your drink, remain "+coin+" dollars");
+					break;
 				}
+			default:
+				System.out.println("Wrong data, input again...");
+				break;
 			}
 		}
 	}
