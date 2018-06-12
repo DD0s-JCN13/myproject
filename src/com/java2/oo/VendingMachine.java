@@ -17,7 +17,7 @@ public class VendingMachine {
 			Drink drink = drinks.get(i);
 			System.out.println(drink.getId()+"\t"+drink.getName()+"\t"+drink.getPrice());
 		}
-		System.out.println("Only avaliable for 1,5,10 coin, stop inserting coins press 0....");
+		System.out.println("Only avaliable for 5,10,50 coin, stop inserting coins press 0....");
 		Scanner incoin = new Scanner(System.in);
 		int insert = incoin.nextInt();
 		int coin = 0;
@@ -29,8 +29,8 @@ public class VendingMachine {
 				c1=false;
 				c2=true;
 				break;
-			case 1:
-				coin = coin + 1;
+			case 50:
+				coin = coin + 50;
 				break;
 			case 5:
 				coin = coin + 5;
