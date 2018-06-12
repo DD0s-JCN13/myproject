@@ -1,4 +1,4 @@
-package com.java2.oo;
+package com.java2.oo.vendingmechine;
 
 
 import java.util.ArrayList;
@@ -18,12 +18,12 @@ public class VendingMachine {
 			System.out.println(drink.getId()+"\t"+drink.getName()+"\t"+drink.getPrice());
 		}
 		System.out.println("Only avaliable for 5,10,50 coin, stop inserting coins press 0....");
-		Scanner incoin = new Scanner(System.in);
-		int insert = incoin.nextInt();
 		int coin = 0;
 		boolean c1 = true;
 		boolean c2 = false;
-		if(c1) {
+		while(c1) {
+			Scanner incoin = new Scanner(System.in);
+			int insert = incoin.nextInt();
 			switch(insert) {
 			case 0:
 				c1=false;
@@ -31,19 +31,22 @@ public class VendingMachine {
 				break;
 			case 50:
 				coin = coin + 50;
+				System.out.println("Now had inserted:"+coin);
 				break;
 			case 5:
 				coin = coin + 5;
+				System.out.println("Now had inserted:"+coin);
 				break;
 			case 10:
 				coin = coin + 10;
+				System.out.println("Now had inserted:"+coin);
 				break;
 			default:
 				System.out.println("Wrong data, input again...");
 				break;
 			}
 		}
-		if(c2) {
+		while(c2) {
 			System.out.println("Please enter the id of the drinks you want to buy....");
 			System.out.println("(Press 0 to exit, then take the change)");
 			Scanner sc = new Scanner(System.in);
@@ -55,7 +58,7 @@ public class VendingMachine {
 			case 1:
 			case 2:
 			case 3:
-				Drink drink = drinks.get(choice);
+				Drink drink = drinks.get(choice-1);
 				if(coin<drink.getPrice()) {
 					System.out.println("Not enough money....");
 					break;

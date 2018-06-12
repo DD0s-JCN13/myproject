@@ -1,4 +1,4 @@
-package com.java2.oo;
+package com.java2.oo.vendingmechine;
 
 public class Drink {
 	int id;

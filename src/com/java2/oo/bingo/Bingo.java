@@ -1,4 +1,4 @@
-package com.java2.oo;
+package com.java2.oo.bingo;
 
 import java.util.List;
 import java.util.ArrayList;
