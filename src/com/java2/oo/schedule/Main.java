@@ -1,4 +1,8 @@
 package com.java2.oo.schedule;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*有一文字檔儲存了課表資料(schedule.txt)
  * 請讀取資料後，設計程式檢查是否有空檔
  * 如：
@@ -11,12 +15,6 @@ package com.java2.oo.schedule;
  */
 
 public class Main {
-
-	public static void main(String args[]){
+	List<Course> courses = new ArrayList<>();
 	
-		
-		
-		
-		
-	}
 }
