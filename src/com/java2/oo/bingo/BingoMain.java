@@ -16,14 +16,19 @@ public class BingoMain {
 			InputStreamReader isr = new InputStreamReader(fis);
 			BufferedReader in = new BufferedReader(isr);
 			String line = in.readLine();
-			String[] token1 = line.split(",");
-			line = in.readLine();
-			String[] token2 = line.split(",");
-			Bingo bingo = new Bingo(Integer.valueOf(token1[0]));
-			for(int i=0; i<token2.length;i++) {
-				bingo.lucky.add(token2[i]);
+			Bingo bingo = null;
+			while(line!=null) {
+				String[] token = line.split(",");
+				if(token.length<2) {
+					bingo = new Bingo(Integer.parseInt(token[0]));
+				}else {
+					for(int i=0; i<token.length;i++) {
+						bingo.lucky.add(token[i]);
+					}
+				}
 			}
 			bingo.on();
+			
 		}catch (FileNotFoundException e){
 			e.printStackTrace();
 		}catch (IOException e) {
