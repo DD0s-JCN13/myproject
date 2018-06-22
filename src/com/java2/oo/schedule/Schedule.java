@@ -30,6 +30,7 @@ public class Schedule {
 				}
 				line = in.readLine();
 			}
+			m.on();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
