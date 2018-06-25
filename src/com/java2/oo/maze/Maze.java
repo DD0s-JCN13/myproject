@@ -10,10 +10,14 @@ public class Maze {
 		int row,col,trapCount;
 		int[] traps;
 		Player player;
+		String[] moves;
 		public maze(int col, int row , int trapCount){
 			this.col = col;
 			this.row = row;
 			this.trapCount = trapCount;
+		}
+		public maze(String[] moves) {
+			this.moves = moves;
 		}
 	}
 	class Player{
